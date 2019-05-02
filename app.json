@@ -1,0 +1,8 @@
+{
+  "name": "Image Processing Application",
+  "description": "A barebones Node.js app using Express 4",
+ "repository": "",
+  "logo": "",
+  "keywords": ["image", "random", "process"],
+  "image": "heroku/nodejs"
+}

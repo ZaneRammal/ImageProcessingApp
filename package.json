@@ -1,0 +1,33 @@
+{
+    "name": "image_processing_app",
+    "version": "1.0beta",
+    "description": "Allows the user to upload an image and have effects applied to it. Makes use of Bootstrap",
+    "engines": {
+        "node": "10.x"
+    },
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "node test.js"
+    },
+    "dependencies": {
+        "caman": "^4.1.2",
+        "ejs": "^2.5.6",
+        "express": "^4.15.2",
+        "jquery": "^3.4.0"
+    },
+    "devDependencies": {
+        "request": "^2.81.0",
+        "tape": "^4.7.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ZaneRammal/ImageProcessingApp"
+    },
+    "keywords": [
+        "node",
+        "heroku",
+        "express"
+    ],
+    "license": "Apache-2.0"
+}

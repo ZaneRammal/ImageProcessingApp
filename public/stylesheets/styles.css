@@ -1,0 +1,61 @@
+/* Styling for the menu bar at the top of every web page */
+ul.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+ul.menu li {
+  float: left;
+}
+
+ul.menu li a {
+  display: block;
+  color: #DFBBB1;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.menu li a:hover {
+  color: black;
+  background-color: #FFFFFF;
+}
+
+/* Fixed footer with same color scheme as the menu bar */
+footer {
+  display: block;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #000000;
+  color: #DFBBB1;
+  text-align: center;
+}
+
+/* Centers specific elements*/
+div.center {
+  margin: auto;
+  text-align: center;
+}
+
+div.form {
+  margin: auto;
+  padding: 15px;
+  width: 150%;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+div.form > input {
+  margin: auto;
+  padding: 10px;
+  width: 35%;
+  border: 2px solid #000000;
+  border-radius: 1px;
+  text-align: center;
+}
