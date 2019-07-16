@@ -1,7 +1,7 @@
 {
     "name": "image_processing_app",
     "version": "1.0beta",
-    "description": "Allows the user to upload an image and have effects applied to it. Makes use of Bootstrap",
+    "description": "Allows the user to upload an image and have effects applied to it.",
     "engines": {
         "node": "10.x"
     },
