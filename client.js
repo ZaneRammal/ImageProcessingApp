@@ -2,23 +2,23 @@
 * Client side scripts here
 */
 
-$('input[type=range]').change(adjustBrightness);
+$('input[type=range]').change(adjustBrightness)
 
 function toGrayscale() {
   Caman("#upload", function () {
-    this.greyscale().render();
+    this.greyscale().render()
   })
 }
 
 function invert() {
   Caman("#upload", function () {
-    this.invert().render();
+    this.invert().render()
   })
 }
 
 function adjustBrightness() {
-  var brightness_val = parseInt($('#brightness').val())
-  Caman("#upload", function() {
+  let brightness_val = parseInt($('#brightness').val())
+  Caman("#upload", function () {
     this.revert(false)
     this.brightness(brightness_val)
     this.render()
@@ -26,13 +26,13 @@ function adjustBrightness() {
 }
 
 function reset() {
-  Caman("#upload", function() {
+  Caman("#upload", function () {
     this.revert(false)
-    this.render();
+    this.render()
   })
 }
 
-// Will run when image is uploaded
+// Keep the effect buttons disabled unless an image has been uploaded
 function display_image(selection) {
   $("#greyscale_btn").attr("disabled", false)
   $("#invert_btn").attr("disabled", false)
@@ -40,15 +40,15 @@ function display_image(selection) {
   $("#brightness").attr("disabled", false)
 
   if (selection.files && selection.files[0]) {
-    var reader = new FileReader()
-    reader.onload = function (o) {
+    let reader = new FileReader()
+    reader.onload = (o) => {
       $('#upload')
-      .attr('src', o.target.result) // Gives <img> a valid src
-      .width(300)
-      .height(300)
+        .attr('src', o.target.result) // Gives <img> a valid src
+        .width(300)
+        .height(300)
     }
     reader.readAsDataURL(selection.files[0])
   } else {
     alert("Error with image upload")
-  }
+  } // end if else
 }

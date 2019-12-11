@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <% include ../partials/head.ejs %>
+  <%-include ('../partials/head.ejs')%>
 </head>
+
 <body>
-  <% include ../partials/menu.ejs %>
-  <div class = "center">
+  <%-include ('../partials/header.ejs')%>
+  <div class="center">
     <p>
       This app makes use of the following tools:
       <li> CamanJS: http://camanjs.com</li>
       <li> JQuery: https://jquery.com/ </li>
+      <li> Feather Icons: https://feathericons.com/ </li>
     </p>
   </div>
+  <%- include ('../partials/footer.ejs') %>
 </body>
-<% include ../partials/footer.ejs %>
+
 </html>

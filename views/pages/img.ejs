@@ -1,50 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <% include ../partials/head.ejs %>
+  <%- include ('../partials/head.ejs') %>
 </head>
+
 <body>
+  <%-include ('../partials/header.ejs')%>
 
-  <!-- The menu bar -->
-  <% include ../partials/menu.ejs %>
+  <!-- UI which allows the user to upload and display an image -->
+  <div class="center">
 
-  <!-- From which allows the user to upload and display an image -->
-  <div class = "center">
-    <!-- Usage instructions -->
-    <h2> Image processing with CamanJS and JQuery </h2>
-    <br><p> Upload an image to apply effects to it. </p>
+    <section name="img_upload">
+      <h2> Image processing with CamanJS and JQuery </h2>
+      <p> Upload an image to apply effects to it. </p>
+      <!-- Allows an image to uploaded and displayed -->
+      <input type='file' id='files' style="padding-left:100px;" onchange="display_image(this)" />
+      <br><br>
+      <img id="upload" src="#" />
+      <hr>
+    </section>
 
-    <!-- Lets the user upload an image -->
-    <input type='file' id='files' style="padding-left:100px;" onchange="display_image(this)"/>
-    <br><br><br>
-    <img id ="upload" src="#"/>
-    <br><br><br>
+    <section name="img_effects">
+      <h4>Brightness</h4>
+      <form id="sliderInput">
+        <label for="brightness">Brightness</label>
+        <input id="brightness" type="range" name="Brightness" min="-50" max="50" value="0" disabled>
+      </form>
+      <br>
+      <h4>Filters</h4>
+      <button id="greyscale_btn" type="button" disabled onclick="toGrayscale()">Grayscale</button>
+      <button id="invert_btn" type="button" disabled onclick="invert()">Invert</button>
+      <hr>
+    </section>
 
-    <!-- Effects -->
-    <h4>Brightness</h4>
-    <form id="sliderInput">
-      <label for="brightness">Brightness</label>
-      <input id="brightness" name="Brightness" type="range" min="-50" max="50" value="0" disabled>
-    </form>
-    <br>
+    <section name="img_reset">
+      <button id="reset_btn" type="button" disabled onclick="reset()">Reset</button>
+    </section>
 
-    <h4>Filters</h4>
-    <button id = "greyscale_btn" type="button"disabled onclick = "toGrayscale()">Grayscale</button>
-    <button id = "invert_btn" type="button" disabled onclick = "invert()">Invert</button>
-    <br><br><br><br>
-
-    <!-- Revert the image to how it was when it was uploaded -->
-    <button id="reset" type="button" disabled onclick = "reset()">Reset</button>
   </div>
-
-  <!-- JQuery -->
-  <script src="/jquery/jquery.js"></script>
-  <script src="/caman/caman.full.min.js"></script>
-  <script src="/jquery_script/client.js"></script>
-
+    <%- include ('../partials/footer.ejs') %>
 </body>
 
-<!-- The footer -->
-<% include ../partials/footer.ejs %>
 
 </html>

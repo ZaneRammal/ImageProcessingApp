@@ -1,26 +1,30 @@
-const http = require('http');
-const path = require('path')
-const fs = require("fs")
 const express = require('express')
+const path = require('path')
+const app = express()
 const PORT = process.env.PORT || 5000
 
-express()
-.use(express.static(__dirname + '/public'))
-.use(express.static(path.join(__dirname, 'views')))
-.set('views', path.join(__dirname, 'views'))
-.set('view engine', 'ejs')
-.get('/', (req, res) => res.render('pages/index'))
-.get('/img', function(req, res) {
+app.set('view engine', 'ejs')
+app.use(express.static(__dirname + '/public'));
+app.use('/caman', express.static(__dirname + '/node_modules/caman/dist'))
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'))
+app.use('/jquery_script', express.static(__dirname + '/'))
+
+app.use('public', express.static(path.join(
+  __dirname,
+  'static'
+)))
+
+app.get('/', (req, res) => {
+  res.render('pages/index')
+})
+app.get('/img', (req, res) => {
   res.render('pages/img', {})
 })
-.get('/about', function(req, res) {
+app.get('/about', (req, res) => {
   res.render('pages/about', {})
 })
-.get('/index', function(req, res) {
+app.get('/index', (req, res) => {
   res.render('pages/index', {})
 })
 
-.use('/caman', express.static(__dirname + '/node_modules/caman/dist'))
-.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'))
-.use('/jquery_script', express.static(__dirname + '/'))
-.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+app.listen(PORT, () => console.log(`Listening on ${PORT}`))

@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <% include ../partials/head.ejs %>
+  <%-include ('../partials/head.ejs')%>
 </head>
+
 <body>
-  <% include ../partials/menu.ejs %>
-
-  <div class = "center">
-    <p>
-      This is a Heroku app where I experiment
-      with various tools.
-    </p>
+  <%-include ('../partials/header.ejs')%>
+  <div class="center">
+    <p>This is a Heroku app where I experiment with various tools.</p>
   </div>
-
+  <%-include ('../partials/footer.ejs')%>
 </body>
-<% include ../partials/footer.ejs %>
+
 </html>
